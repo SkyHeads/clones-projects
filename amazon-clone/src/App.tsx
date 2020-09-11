@@ -1,10 +1,17 @@
 import React from 'react';
 
+import Header from './components/Header';
+
 import GlobalStyle from './styles/global';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <GlobalStyle />
+    <>
+      <GlobalStyle />
+      {/* HEADER */}
+      <Header />
+      {/* HOME */}
+    </>
   );
 }
 
