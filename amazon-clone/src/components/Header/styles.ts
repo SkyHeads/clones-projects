@@ -16,7 +16,7 @@ export const LogoImg = styled.img`
   height: 30px;
   width: 97px;
   margin: 0 20px;
-  margin-top: 18px;
+  margin-top: 14px;
   object-fit: contain;
 `;
 
@@ -41,5 +41,23 @@ export const HeaderSearchIcon = styled(SearchIcon)`
 `;
 
 export const HeaderNav = styled.nav`
+  display: flex;
+  justify-content: space-evenly;
 
+  > div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+    color: white;
+
+    .header__optionLineOne {
+      font-size: 10px;
+    }
+
+    .header__optionLineTwo {
+      font-size: 13px;
+      font-weight: 800;
+    }
+  }
 `;
