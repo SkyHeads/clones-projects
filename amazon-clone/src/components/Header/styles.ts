@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 import SearchIcon from '@material-ui/icons/Search';
-import BasketIcon from '@material-ui/icons/ShoppingBasket';
 
 export const Container = styled.header`
   height: 60px;
@@ -76,6 +75,3 @@ export const HeaderNavBasketBox = styled.div`
     }
 `;
 
-export const HeaderNavBasketIcon = styled(BasketIcon)`
-  
-`;

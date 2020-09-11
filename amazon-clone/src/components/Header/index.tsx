@@ -1,8 +1,10 @@
 import React from 'react';
 
+import BasketIcon from '@material-ui/icons/ShoppingBasket';
+
 import Logo from '../../assets/img/logo-white.png';
 
-import { Container, LogoImg, HeaderSearch, HeaderSearchInput, HeaderNav, HeaderSearchIcon, HeaderNavBasketIcon, HeaderNavBasketBox } from './styles';
+import { Container, LogoImg, HeaderSearch, HeaderSearchInput, HeaderNav, HeaderSearchIcon, HeaderNavBasketBox } from './styles';
 
 const Header: React.FC = () => {
   return (
@@ -29,7 +31,7 @@ const Header: React.FC = () => {
         </div>
       </HeaderNav>
       <HeaderNavBasketBox>
-        <HeaderNavBasketIcon />
+        <BasketIcon />
         <span>0</span>
       </HeaderNavBasketBox>
     </Container>
