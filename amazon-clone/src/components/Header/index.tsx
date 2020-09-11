@@ -2,14 +2,14 @@ import React from 'react';
 
 import Logo from '../../assets/img/logo-white.png';
 
-import { Container, LogoImg, HeaderSearch, HeaderSearchInput, HeaderNav, HeaderSearchIcon } from './styles';
+import { Container, LogoImg, HeaderSearch, HeaderSearchInput, HeaderNav, HeaderSearchIcon, HeaderNavBasketIcon, HeaderNavBasketBox } from './styles';
 
 const Header: React.FC = () => {
   return (
     <Container>
       <LogoImg src={Logo} />
       <HeaderSearch>
-        <HeaderSearchInput type="text"/>
+        <HeaderSearchInput type="text" />
         <HeaderSearchIcon />
       </HeaderSearch>
       <HeaderNav>
@@ -28,6 +28,10 @@ const Header: React.FC = () => {
           <span className="header__optionLineTwo">Prime</span>
         </div>
       </HeaderNav>
+      <HeaderNavBasketBox>
+        <HeaderNavBasketIcon />
+        <span>0</span>
+      </HeaderNavBasketBox>
     </Container>
   );
 }

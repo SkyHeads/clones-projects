@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import SearchIcon from '@material-ui/icons/Search';
+import BasketIcon from '@material-ui/icons/ShoppingBasket';
 
 export const Container = styled.header`
   height: 60px;
@@ -60,4 +61,21 @@ export const HeaderNav = styled.nav`
       font-weight: 800;
     }
   }
+`;
+
+export const HeaderNavBasketBox = styled.div`
+  display: flex;
+  align-items: center;
+  color: white;
+
+  span {
+      font-size: 13px;
+      font-weight: 800;
+      margin-right: 10px;
+      margin-left: 10px;
+    }
+`;
+
+export const HeaderNavBasketIcon = styled(BasketIcon)`
+  
 `;
