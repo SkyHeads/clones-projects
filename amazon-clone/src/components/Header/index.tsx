@@ -2,14 +2,15 @@ import React from 'react';
 
 import Logo from '../../assets/img/logo-white.png';
 
-import { Container, LogoImg, HeaderSearch, HeaderNav } from './styles';
+import { Container, LogoImg, HeaderSearch, HeaderSearchInput, HeaderNav, HeaderSearchIcon } from './styles';
 
 const Header: React.FC = () => {
   return (
     <Container>
       <LogoImg src={Logo} />
       <HeaderSearch>
-        <input type="text"/>
+        <HeaderSearchInput type="text"/>
+        <HeaderSearchIcon />
       </HeaderSearch>
       <HeaderNav>
         <div className="header__option">

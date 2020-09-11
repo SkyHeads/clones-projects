@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import SearchIcon from '@material-ui/icons/Search';
+
 export const Container = styled.header`
   height: 60px;
   display: flex;
@@ -19,7 +21,23 @@ export const LogoImg = styled.img`
 `;
 
 export const HeaderSearch = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  border-radius: 24px;
+`;
 
+export const HeaderSearchInput = styled.input`
+  height: 22px;
+  padding: 10px;
+  border: none;
+  width: 100%;
+`;
+
+export const HeaderSearchIcon = styled(SearchIcon)`
+  padding: 5px;
+  height: 22px !important;
+  background-color: #cd9042;
 `;
 
 export const HeaderNav = styled.nav`
