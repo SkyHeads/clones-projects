@@ -17,10 +17,13 @@ const Product: React.FC = () => {
           <p>🌟</p>
         </div>
 
-        <img src="https://images-na.ssl-images-amazon.com/images/G/32/br-crosscategory/2020/HUD/Deals/GW_Dash_Deals_slim_boxes_379x304._SY304_CB406804813_.jpg" alt=""/>
+        <img
+          src="https://images-na.ssl-images-amazon.com/images/G/32/br-crosscategory/2020/HUD/Deals/GW_Dash_Deals_slim_boxes_379x304._SY304_CB406804813_.jpg"
+          alt=""
+        />
       </ProductInfo>
     </Container>
   );
-}
+};
 
 export default Product;
