@@ -13,15 +13,15 @@ const Product: React.FC = () => {
         </p>
         <div className="product__rating">
           <p>🌟</p>
-          <p>🌟</p>
-          <p>🌟</p>
         </div>
-
-        <img
-          src="https://images-na.ssl-images-amazon.com/images/G/32/br-crosscategory/2020/HUD/Deals/GW_Dash_Deals_slim_boxes_379x304._SY304_CB406804813_.jpg"
-          alt=""
-        />
       </ProductInfo>
+
+      <img
+        src="https://images-na.ssl-images-amazon.com/images/G/32/br-crosscategory/2020/HUD/Deals/GW_Dash_Deals_slim_boxes_379x304._SY304_CB406804813_.jpg"
+        alt=""
+      />
+
+      <button type="submit">Add to Basket</button>
     </Container>
   );
 };

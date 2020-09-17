@@ -18,18 +18,18 @@ const Home: React.FC = () => {
           alt=""
         />
         <HomeContentRow>
-          {/* PRODUCT */}
-          {/* PRODUCT */}
           <Product />
           <Product />
         </HomeContentRow>
 
         <HomeContentRow>
-          {/* PRODUCT */}
-          {/* PRODUCT */}
+          <Product />
+          <Product />
+          <Product />
         </HomeContentRow>
-
-        <HomeContentRow>{/* PRODUCT */}</HomeContentRow>
+        <HomeContentRow>
+          <Product />
+        </HomeContentRow>
       </HomeContent>
     </Container>
   );

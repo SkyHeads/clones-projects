@@ -15,6 +15,7 @@ export default createGlobalStyle`
     font-family: "Amazon Ember", Arial, sans-serif;
   }
   body {
+    background-color: rgb(234, 237, 237);
     -webkit-font-smoothing: antialiased !important
   }
   a {
