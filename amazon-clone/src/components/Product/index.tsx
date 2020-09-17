@@ -5,7 +5,7 @@ import { Container, ProductInfo } from './styles';
 interface ProductProps {
   title: string;
   image: string;
-  price: number;
+  price?: number;
   rating: number;
 }
 
