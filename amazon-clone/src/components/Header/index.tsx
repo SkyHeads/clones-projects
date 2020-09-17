@@ -4,7 +4,15 @@ import BasketIcon from '@material-ui/icons/ShoppingBasket';
 
 import Logo from '../../assets/img/logo-white.png';
 
-import { Container, LogoImg, HeaderSearch, HeaderSearchInput, HeaderNav, HeaderSearchIcon, HeaderNavBasketBox } from './styles';
+import {
+  Container,
+  LogoImg,
+  HeaderSearch,
+  HeaderSearchInput,
+  HeaderNav,
+  HeaderSearchIcon,
+  HeaderNavBasketBox,
+} from './styles';
 
 const Header: React.FC = () => {
   return (
@@ -36,6 +44,6 @@ const Header: React.FC = () => {
       </HeaderNavBasketBox>
     </Container>
   );
-}
+};
 
 export default Header;
