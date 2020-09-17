@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import BasketIcon from '@material-ui/icons/ShoppingBasket';
 
@@ -17,7 +18,9 @@ import {
 const Header: React.FC = () => {
   return (
     <Container>
-      <LogoImg src={Logo} />
+      <Link to="/">
+        <LogoImg src={Logo} />
+      </Link>
       <HeaderSearch>
         <HeaderSearchInput type="text" />
         <HeaderSearchIcon />
@@ -38,10 +41,12 @@ const Header: React.FC = () => {
           <span className="header__optionLineTwo">Prime</span>
         </div>
       </HeaderNav>
-      <HeaderNavBasketBox>
-        <BasketIcon />
-        <span>0</span>
-      </HeaderNavBasketBox>
+      <Link to="/checkout">
+        <HeaderNavBasketBox>
+          <BasketIcon />
+          <span>0</span>
+        </HeaderNavBasketBox>
+      </Link>
     </Container>
   );
 };

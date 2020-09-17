@@ -12,13 +12,12 @@ const App: React.FC = () => {
   return (
     <>
       <Router>
+        <Header />
         <Switch>
           <Route path="/checkout">
-            <Header />
             <Checkout />
           </Route>
           <Route path="/" exact>
-            <Header />
             <Home />
           </Route>
         </Switch>
