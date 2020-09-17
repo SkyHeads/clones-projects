@@ -18,18 +18,29 @@ const Home: React.FC = () => {
           alt=""
         />
         <HomeContentRow>
+          <Product
+            title="The lean startup"
+            price={29.99}
+            image="https://images-na.ssl-images-amazon.com/images/G/32/kindle/devices/2020/Alexa/GW/Agosto/W32/DesktopHero_1500x600_Echo_branco._CB406691354_.jpg"
+            rating={5}
+          />
+          <Product
+            title="The lean startup"
+            price={29.99}
+            image="https://images-na.ssl-images-amazon.com/images/G/32/kindle/devices/2020/Alexa/GW/Agosto/W32/DesktopHero_1500x600_Echo_branco._CB406691354_.jpg"
+            rating={2}
+          />
+        </HomeContentRow>
+
+        {/* <HomeContentRow>
+          <Product />
           <Product />
           <Product />
         </HomeContentRow>
 
         <HomeContentRow>
           <Product />
-          <Product />
-          <Product />
-        </HomeContentRow>
-        <HomeContentRow>
-          <Product />
-        </HomeContentRow>
+        </HomeContentRow> */}
       </HomeContent>
     </Container>
   );

@@ -38,6 +38,7 @@ export const ProductInfo = styled.div`
   }
 
   .product__rating {
+    display: flex;
     margin-top: 5px;
   }
 `;

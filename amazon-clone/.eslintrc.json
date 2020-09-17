@@ -43,7 +43,9 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/prop-types": "off"
   },
   "settings": {
     "import/resolver": {
