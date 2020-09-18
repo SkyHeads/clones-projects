@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SubTotal from './Subtotal';
+
 import {
   Container,
   CheckoutLeft,
@@ -17,7 +19,7 @@ const Checkout: React.FC = () => {
         </div>
       </CheckoutLeft>
       <CheckoutRight>
-        <h2>The SubTotal</h2>
+        <SubTotal />
       </CheckoutRight>
     </Container>
   );

@@ -52,7 +52,6 @@ const Home: React.FC = () => {
             rating={3}
           />
         </HomeContentRow>
-
         <HomeContentRow>
           <Product
             title="Xiaomi Airdots Redmi Fone Bluetooth Sem Fio, Botões Físicos, Controle por Voz"
