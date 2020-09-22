@@ -31,8 +31,9 @@ const App: React.FC = () => {
         <input type="text" value={value} onChange={e => setValue(e.target.value)} required/>
         <button type="submit">Add Todo</button>
       </form>
-      {todos.map(todo => (
-        <ul key={todo.text}>
+      {todos.map((todo: ITodo, index: number) => (
+        <ul key={index}>
+          <span>{index}</span>
           <li>{todo.text}</li>
         </ul>
       ))}
