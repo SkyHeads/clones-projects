@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import './App.css';
 
+type FormElem = React.FormEvent<HTMLFormElement>
+
 const App: React.FC = () => {
   const [value, setValue] = useState<string>('');
+  const [todos, setTodos] = useState<string[]>([]);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: FormElem): void => {
     e.preventDefault();
     console.log(value);
     setValue('');
