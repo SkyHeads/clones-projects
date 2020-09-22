@@ -17,6 +17,12 @@ const App: React.FC = () => {
     setTodos(newTodos);
   };
 
+  const completeTodo = (index: number) => {
+    const newTodos: ITodo[] = [...todos];
+    newTodos[index].complete = !newTodos[index].complete;
+    setTodos(newTodos);
+  };
+
   const handleSubmit = (e: FormElem): void => {
     e.preventDefault();
     addTodo(value);
@@ -38,8 +44,10 @@ const App: React.FC = () => {
       </form>
       {todos.map((todo: ITodo, index: number) => (
         <ul key={index}>
-          <span>{index}</span>
           <li>{todo.text}</li>
+          <button type="button" onClick={() => completeTodo(index)}>
+            {todo.complete ? 'Incomplete' : 'Complete'}
+          </button>
         </ul>
       ))}
     </>
