@@ -1,8 +1,11 @@
 import React from 'react';
 
-function App() {
+const App: React.FC = () => {
   return (
-     <h1>Hello World</h1>
+      <>
+      <h1>Rick and Morty</h1>
+      <p>Pick your favorite episode</p>
+     </>
   );
 }
 
