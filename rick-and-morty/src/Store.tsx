@@ -1,14 +1,20 @@
 import React from 'react';
 
-const initialState = {
-  basket: 0,
+interface IState {
+  episodes: [];
+  favourites: [];
+}
+
+const initialState: IState = {
+  episodes: [],
+  favourites: [],
 };
 
-export const Store = React.createContext(initialState);
+export const Store = React.createContext<IState>(initialState);
 
-function reducer() {
-  // pass
-}
+// function reducer(): void {
+//   // pass
+// }
 
 export const StoreProvider: React.FC = ({ children }) => {
   return <Store.Provider value={initialState}>{children}</Store.Provider>;
