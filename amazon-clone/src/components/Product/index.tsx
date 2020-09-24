@@ -1,16 +1,13 @@
-import React, { useContext } from 'react';
-
-import { AppContext } from '../../hooks/context';
-import { Types } from '../../hooks/reducers';
-
+import React, { useCallback, useContext } from 'react';
+import { Store } from '../../hooks/Store';
 import { Container, ProductInfo } from './styles';
 
-interface ProductProps {
+export interface ProductProps {
   id?: string;
-  title: string;
-  image: string;
+  title?: string;
+  image?: string;
   price?: number;
-  rating: number;
+  rating?: number;
 }
 
 const Product: React.FC<ProductProps> = ({
@@ -20,8 +17,15 @@ const Product: React.FC<ProductProps> = ({
   price,
   rating,
 }) => {
-  const { state, dispatch } = useContext(AppContext);
-  console.log(state);
+  const { state, dispatch } = useContext(Store);
+
+  const addToBasket = useCallback(() => {
+    dispatch({
+      type: 'ADD_TO_BASKET',
+      payload: { id, title, image, price, rating },
+    });
+  }, [dispatch, id, title, image, price, rating]);
+
   return (
     <Container>
       <ProductInfo>
@@ -43,17 +47,9 @@ const Product: React.FC<ProductProps> = ({
 
       <img src={image} alt="Product" />
 
-      <button
-        onClick={() => {
-          dispatch({
-            type: Types.Add,
-          });
-        }}
-        type="submit"
-      >
+      <button onClick={addToBasket} type="submit">
         Add to Basket
       </button>
-      {state.shoppingCart}
     </Container>
   );
 };

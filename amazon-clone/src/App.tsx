@@ -4,14 +4,13 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
 
-import { AppProvider } from './hooks/context';
-// import Products from './components/products';
+import { StoreProvider } from './hooks/Store';
 
 import GlobalStyle from './styles/global';
 
 const App: React.FC = () => {
   return (
-    <AppProvider>
+    <StoreProvider>
       <Router>
         <Header />
         <Switch>
@@ -24,7 +23,7 @@ const App: React.FC = () => {
         </Switch>
       </Router>
       <GlobalStyle />
-    </AppProvider>
+    </StoreProvider>
   );
 };
 

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import BasketIcon from '@material-ui/icons/ShoppingBasket';
+import { Store } from '../../hooks/Store';
 
 import Logo from '../../assets/img/logo-white.png';
 
@@ -16,6 +17,8 @@ import {
 } from './styles';
 
 const Header: React.FC = () => {
+  const { state, _ } = useContext(Store);
+
   return (
     <Container>
       <Link to="/">
@@ -44,7 +47,7 @@ const Header: React.FC = () => {
       <Link to="/checkout">
         <HeaderNavBasketBox>
           <BasketIcon />
-          <span>0</span>
+          <span>{state.basket.length}</span>
         </HeaderNavBasketBox>
       </Link>
     </Container>
