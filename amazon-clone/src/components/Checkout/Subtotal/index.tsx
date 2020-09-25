@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Store, getBasketTotal } from '../../../hooks/Store';
+
 import { Container } from './styles';
 
 const Subtotal: React.FC = () => {
+  const { state, _ } = useContext(Store);
+
   return (
     <Container>
       <>
         <p>
-          Subtotal (0 items):
-          <strong>0</strong>
+          Subtotal ({state.basket.length} items):
+          <strong>R$ {getBasketTotal(state.basket)}</strong>
         </p>
         <small className="subtotal__gift">
           <input type="checkbox" />

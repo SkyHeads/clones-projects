@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from 'react';
 
-interface IState {
-  basket: Array<any | undefined>;
+export interface IState {
+  basket: Array<any>;
 }
 
 interface IAction {
@@ -22,6 +22,10 @@ function reducer(state: IState, action: IAction): IState {
     default:
       return state;
   }
+}
+
+export function getBasketTotal(basket: Array<any>): IState {
+  return basket?.reduce((amount, item) => item.price + amount, 0);
 }
 
 export const StoreProvider: React.FC = ({ children }) => {
