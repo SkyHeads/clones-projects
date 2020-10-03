@@ -20,13 +20,13 @@ const Home: React.FC = () => {
         <HomeContentRow>
           <Product
             title="Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta"
-            price={299.99}
+            price={299}
             image="https://images-na.ssl-images-amazon.com/images/I/61Rr8uxmREL._AC_SL1000_.jpg"
             rating={5}
           />
           <Product
             title="Echo Show 8 - Smart Speaker com tela de 8 e Alexa - Cor Preta"
-            price={899.99}
+            price={899}
             image="https://images-na.ssl-images-amazon.com/images/I/51uUR1j-kfL._AC_SL1000_.jpg"
             rating={3}
           />
@@ -34,29 +34,29 @@ const Home: React.FC = () => {
         <HomeContentRow>
           <Product
             title="Controle Dualshock 4 - PlayStation 4 - Preto"
-            price={259.53}
+            price={259}
             image="https://images-na.ssl-images-amazon.com/images/I/51Ieq0twp%2BL._AC_SL1000_.jpg"
             rating={3}
           />
           <Product
-            title="Caixa de Som Mini Bluetooth 4.2 Portátil 3W"
-            price={56.97}
-            image="https://images-na.ssl-images-amazon.com/images/I/61Ll4jSVHyL._AC_SL1200_.jpg"
+            title="Notebook Acer 15.6 A315-34-C5EY Celeron N4000 4GB 500GB"
+            price={2199}
+            image="https://images-na.ssl-images-amazon.com/images/I/61cndENlY7L._AC_SL1000_.jpg"
             rating={4}
           />
           <Product
             title="
             Xiaomi Redmi Note 9 128GB 4GB RAM - Versão Global - Midnight Grey"
-            price={999.99}
+            price={999}
             image="https://images-na.ssl-images-amazon.com/images/I/61VmUpCs7PL._AC_SL1000_.jpg"
             rating={3}
           />
         </HomeContentRow>
         <HomeContentRow>
           <Product
-            title="Xiaomi Airdots Redmi Fone Bluetooth Sem Fio, Botões Físicos, Controle por Voz"
-            price={162.28}
-            image="https://images-na.ssl-images-amazon.com/images/I/51ql07y5wbL._AC_SL1000_.jpg"
+            title="Pc Gamer/Home Office I5 3470-8gb - 1tb Top27"
+            price={1999}
+            image="https://images-na.ssl-images-amazon.com/images/I/61mdUKyykGL._AC_SL1000_.jpg"
             rating={5}
           />
         </HomeContentRow>
