@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useCallback, useContext } from 'react';
+
+import { Store } from '../../../hooks/Store';
 
 import { ProductProps } from '../../Product';
 
@@ -19,6 +21,15 @@ const CheckoutProduct: React.FC<ProductProps> = ({
   price,
   rating,
 }) => {
+  const { state, dispatch } = useContext(Store);
+
+  const removeFromBasket = useCallback(() => {
+    dispatch({
+      type: 'REMOVE_FROM_BASKET',
+      payload: { id },
+    });
+  }, [dispatch, id]);
+
   return (
     <Container>
       <CheckoutProductImage src={image} />
@@ -35,7 +46,7 @@ const CheckoutProduct: React.FC<ProductProps> = ({
               <p key={i}>🌟</p>
             ))}
         </CheckoutProductRating>
-        <CheckoutProductButton type="button">
+        <CheckoutProductButton type="button" onClick={removeFromBasket}>
           Remove from basket
         </CheckoutProductButton>
       </CheckoutProductInfo>
