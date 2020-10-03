@@ -32,6 +32,8 @@
   "rules": {
     "prettier/prettier": "error",
     "react/jsx-one-expression-per-line": "off",
+    "no-case-declarations": "off",
+    "no-console": "off",
     "jsx-a11y/accessible-emoji": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
