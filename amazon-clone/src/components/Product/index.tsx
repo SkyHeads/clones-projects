@@ -48,7 +48,7 @@ const Product: React.FC<ProductProps> = ({
       <img src={image} alt="Product" />
 
       <button onClick={addToBasket} type="submit">
-        Add to Basket
+        Adicionar ao Carrinho
       </button>
     </Container>
   );

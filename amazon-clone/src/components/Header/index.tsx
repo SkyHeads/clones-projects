@@ -31,18 +31,18 @@ const Header: React.FC = () => {
       <HeaderNav>
         <Link to="/login">
           <div>
-            <span className="header__optionLineOne">Hello Guest</span>
-            <span className="header__optionLineTwo">Sign In</span>
+            <span className="header__optionLineOne">Olá Bruno</span>
+            <span className="header__optionLineTwo">Logar</span>
           </div>
         </Link>
 
         <div>
-          <span className="header__optionLineOne">Returns</span>
-          <span className="header__optionLineTwo">& Orders</span>
+          <span className="header__optionLineOne">Retornar</span>
+          <span className="header__optionLineTwo">& Pedidos</span>
         </div>
 
         <div>
-          <span className="header__optionLineOne">Your</span>
+          <span className="header__optionLineOne">Seu</span>
           <span className="header__optionLineTwo">Prime</span>
         </div>
       </HeaderNav>
