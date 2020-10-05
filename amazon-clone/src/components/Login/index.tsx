@@ -1,5 +1,6 @@
 import React, { useState, useCallback, FormEvent } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import { auth } from '../../configs/firebase';
 
 import Logo from '../../assets/img/logo.png';
 
@@ -9,13 +10,28 @@ const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const history = useHistory();
+
   const signIn = useCallback((e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
   }, []);
 
-  const signUp = useCallback((e: FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-  }, []);
+  const signUp = useCallback(
+    (e: FormEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+
+      auth
+        .createUserWithEmailAndPassword(email, password)
+        .then(response => {
+          console.log(response);
+          if (response) {
+            history.push('/');
+          }
+        })
+        .catch(error => alert(error.message));
+    },
+    [email, password],
+  );
 
   return (
     <Container>
