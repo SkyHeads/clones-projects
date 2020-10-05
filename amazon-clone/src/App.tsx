@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 import Header from './components/Header';
 import Home from './components/Home';
 import Checkout from './components/Checkout';
+import Login from './components/Login';
 
 import { StoreProvider } from './hooks/Store';
 
@@ -12,12 +14,16 @@ const App: React.FC = () => {
   return (
     <StoreProvider>
       <Router>
-        <Header />
         <Switch>
+          <Route path="/login">
+            <Login />
+          </Route>
           <Route path="/checkout">
+            <Header />
             <Checkout />
           </Route>
           <Route path="/" exact>
+            <Header />
             <Home />
           </Route>
         </Switch>

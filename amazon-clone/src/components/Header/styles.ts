@@ -44,7 +44,7 @@ export const HeaderNav = styled.nav`
   display: flex;
   justify-content: space-evenly;
 
-  > div {
+  div {
     display: flex;
     flex-direction: column;
     margin-left: 10px;
@@ -68,10 +68,9 @@ export const HeaderNavBasketBox = styled.div`
   color: white;
 
   span {
-      font-size: 13px;
-      font-weight: 800;
-      margin-right: 10px;
-      margin-left: 10px;
-    }
+    font-size: 13px;
+    font-weight: 800;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 `;
-

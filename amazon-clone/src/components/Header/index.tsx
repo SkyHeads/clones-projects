@@ -29,10 +29,12 @@ const Header: React.FC = () => {
         <HeaderSearchIcon />
       </HeaderSearch>
       <HeaderNav>
-        <div>
-          <span className="header__optionLineOne">Hello Guest</span>
-          <span className="header__optionLineTwo">Sign In</span>
-        </div>
+        <Link to="/login">
+          <div>
+            <span className="header__optionLineOne">Hello Guest</span>
+            <span className="header__optionLineTwo">Sign In</span>
+          </div>
+        </Link>
 
         <div>
           <span className="header__optionLineOne">Returns</span>
