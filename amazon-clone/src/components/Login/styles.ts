@@ -36,10 +36,23 @@ export const LogInContent = styled.div`
   }
 
   form input {
-    height: 30px;
+    height: 31px;
+    line-height: normal;
+    padding: 3px 7px;
     margin-bottom: 10px;
-    background-color: white;
+    border-radius: 3px;
+    background-color: #e8f0fe;
     width: 98%;
+    border: 1px solid #a6a6a6;
+    border-top-color: #949494;
+    outline: 0;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5),
+      0 1px 0 rgba(0, 0, 0, 0.07) inset;
+  }
+
+  form input:hover {
+    border: 1px solid #e77600;
+    box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
   }
 
   p {
@@ -55,6 +68,7 @@ export const LogInContent = styled.div`
     border: 1px solid;
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
+    cursor: pointer;
   }
 
   .login__registerButton {
@@ -64,5 +78,6 @@ export const LogInContent = styled.div`
     border: 1px solid;
     margin-top: 10px;
     border-color: darkgray;
+    cursor: pointer;
   }
 `;

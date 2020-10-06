@@ -1,7 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
 import BasketIcon from '@material-ui/icons/ShoppingBasket';
+import firebase from '../../firebase';
+
 import { Store } from '../../hooks/Store';
 
 import Logo from '../../assets/img/logo-white.png';
@@ -17,7 +19,13 @@ import {
 } from './styles';
 
 const Header: React.FC = () => {
-  const { state, _ } = useContext(Store);
+  const { state, user } = useContext(Store);
+
+  const handleSignOut = useCallback(() => {
+    if (user) {
+      firebase.auth().signOut();
+    }
+  }, [user]);
 
   return (
     <Container>
@@ -30,9 +38,15 @@ const Header: React.FC = () => {
       </HeaderSearch>
       <HeaderNav>
         <Link to="/login">
-          <div>
-            <span className="header__optionLineOne">Olá Bruno</span>
-            <span className="header__optionLineTwo">Logar</span>
+          <div onClick={handleSignOut}>
+            {!user ? (
+              <span className="header__optionLineOne">Faça Login</span>
+            ) : (
+              <span className="header__optionLineOne">Olá {user?.email}</span>
+            )}
+            <span className="header__optionLineTwo">
+              {user ? 'Sair' : 'Entrar'}
+            </span>
           </div>
         </Link>
 

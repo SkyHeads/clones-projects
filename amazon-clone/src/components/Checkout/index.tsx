@@ -25,6 +25,7 @@ const Checkout: React.FC = () => {
 
           {state.basket.map((item: ProductProps) => (
             <CheckoutProduct
+              key={item.id}
               id={item.id}
               title={item.title}
               image={item.image}

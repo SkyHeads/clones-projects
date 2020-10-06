@@ -1,7 +1,16 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useState, useEffect } from 'react';
+import firebase from '../firebase';
+
+type ContextProps = {
+  user: firebase.User | null;
+  authenticated: boolean;
+  setUser: any;
+  loadingAuthState: boolean;
+};
 
 export interface IState {
   basket: Array<any>;
+  user: firebase.User | null;
 }
 
 interface IAction {
@@ -11,9 +20,10 @@ interface IAction {
 
 const initialState: IState = {
   basket: [],
+  user: null,
 };
 
-export const Store = createContext<IState | any>(initialState);
+export const Store = createContext<IState | ContextProps | any>(initialState);
 
 function reducer(state: IState, action: IAction): IState {
   switch (action.type) {
@@ -33,7 +43,6 @@ function reducer(state: IState, action: IAction): IState {
           `Voçe não pode remover o produto (id: ${action.payload.id}), pois ele não está na cesta`,
         );
       }
-
       return {
         ...state,
         basket: newBasket,
@@ -48,8 +57,30 @@ export function getBasketTotal(basket: Array<any>): IState {
 }
 
 export const StoreProvider: React.FC = ({ children }) => {
+  const [user, setUser] = useState(null as firebase.User | null);
+  const [loadingAuthState, setLoadingAuthState] = useState(true);
+
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((userLog: any) => {
+      setUser(userLog);
+      setLoadingAuthState(false);
+    });
+  }, []);
+
   return (
-    <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
+    <Store.Provider
+      value={{
+        state,
+        dispatch,
+        user,
+        authenticated: user !== null,
+        setUser,
+        loadingAuthState,
+      }}
+    >
+      {children}
+    </Store.Provider>
   );
 };

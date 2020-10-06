@@ -4,7 +4,7 @@ import { Store, getBasketTotal } from '../../../hooks/Store';
 import { Container } from './styles';
 
 const Subtotal: React.FC = () => {
-  const { state, _ } = useContext(Store);
+  const { state, dispatch } = useContext(Store);
 
   return (
     <Container>

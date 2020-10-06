@@ -1,36 +1,54 @@
-import React, { useState, useCallback, FormEvent } from 'react';
+import React, { useState, useCallback, FormEvent, useContext } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { auth } from '../../configs/firebase';
+import { auth, User } from 'firebase';
+import firebase from '../../firebase';
+import 'firebase/auth';
+
+import { Store } from '../../hooks/Store';
 
 import Logo from '../../assets/img/logo.png';
 
 import { Container, LogoImg, LogInContent } from './styles';
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const storeContext = useContext(Store);
 
   const history = useHistory();
 
-  const signIn = useCallback((e: FormEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-  }, []);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const signIn = useCallback(
+    (e: FormEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(email, password)
+        .then(response => {
+          storeContext.setUser(response);
+          history.push('/');
+        })
+        .catch(error => console.log(error.message));
+    },
+    [email, password, history, storeContext],
+  );
 
   const signUp = useCallback(
     (e: FormEvent<HTMLButtonElement>) => {
       e.preventDefault();
 
-      auth
+      firebase
+        .auth()
         .createUserWithEmailAndPassword(email, password)
         .then(response => {
-          console.log(response);
           if (response) {
             history.push('/');
           }
         })
-        .catch(error => alert(error.message));
+        .catch(error => console.log(error.message));
     },
-    [email, password],
+    [email, password, history],
   );
 
   return (
@@ -60,7 +78,7 @@ const Login: React.FC = () => {
             className="login__signInButton"
             type="submit"
           >
-            Entrar
+            Continuar
           </button>
         </form>
         <p>
