@@ -34,6 +34,11 @@ export const ProductInfo = styled.div`
   height: 100px;
   margin-bottom: 15px;
 
+  p {
+    position: relative;
+    top: 0;
+  }
+
   .product__price {
     margin-top: 5px;
   }

@@ -10,6 +10,8 @@ export const Container = styled.header`
   position: sticky;
   top: 0;
   z-index: 100;
+
+  min-width: 480px;
 `;
 
 export const LogoImg = styled.img`
