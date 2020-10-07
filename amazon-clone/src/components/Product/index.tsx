@@ -40,7 +40,7 @@ const Product: React.FC<ProductProps> = ({
           {Array(rating)
             .fill(rating, 0)
             .map((_: any, i: number) => (
-              <i className="fa fa-star" />
+              <i key={i} className="fa fa-star" />
             ))}
         </div>
       </ProductInfo>
