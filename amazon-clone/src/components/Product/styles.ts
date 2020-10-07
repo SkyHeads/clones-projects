@@ -14,7 +14,7 @@ export const Container = styled.div`
   z-index: 1;
 
   > img {
-    max-height: 200px;
+    max-height: 140px;
     width: 100%;
     object-fit: contain;
     margin-bottom: 15px;

@@ -11,7 +11,7 @@ export const Container = styled.header`
   top: 0;
   z-index: 100;
 
-  min-width: 480px;
+  min-width: 850px;
 `;
 
 export const LogoImg = styled.img`

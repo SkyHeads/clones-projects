@@ -19,21 +19,21 @@ const Home: React.FC = () => {
         />
         <HomeContentRow>
           <Product
-            title="Echo Dot (3ª Geração): Smart Speaker com Alexa - Cor Preta"
+            title="Echo Dot (3ª Geração): Smart Speaker com Alexa"
             price={299}
             image="https://images-na.ssl-images-amazon.com/images/I/61Rr8uxmREL._AC_SL1000_.jpg"
             rating={5}
           />
           <Product
-            title="Echo Show 8 - Smart Speaker com tela de 8 e Alexa - Cor Preta"
+            title="Echo Show 8 - Smart Speaker com tela de 8 e Alexa"
             price={899}
             image="https://images-na.ssl-images-amazon.com/images/I/51uUR1j-kfL._AC_SL1000_.jpg"
             rating={3}
           />
         </HomeContentRow>
-        <HomeContentRow>
+        <HomeContentRow className="mob-row">
           <Product
-            title="Controle Dualshock 4 - PlayStation 4 - Preto"
+            title="Controle Dualshock 4 - PlayStation 4"
             price={259}
             image="https://images-na.ssl-images-amazon.com/images/I/51Ieq0twp%2BL._AC_SL1000_.jpg"
             rating={3}
@@ -46,10 +46,17 @@ const Home: React.FC = () => {
           />
           <Product
             title="
-            Xiaomi Redmi Note 9 128GB 4GB RAM - Versão Global - Midnight Grey"
+            Cafeteira Expresso Prima Latte II, Vermelho, 220v, Oster"
             price={999}
-            image="https://images-na.ssl-images-amazon.com/images/I/61VmUpCs7PL._AC_SL1000_.jpg"
-            rating={3}
+            image="https://images-na.ssl-images-amazon.com/images/I/61XxOI6uACL._AC_SL1000_.jpg"
+            rating={5}
+          />
+          <Product
+            title="
+            Relógio Smartwatch IWO 12 Lite W26 Tela Infinita HD 1.75 Preto Troca Pulseiras"
+            price={201}
+            image="https://images-na.ssl-images-amazon.com/images/I/3150-TCm8vL._AC_.jpg"
+            rating={5}
           />
         </HomeContentRow>
         <HomeContentRow>
@@ -57,6 +64,12 @@ const Home: React.FC = () => {
             title="Pc Gamer/Home Office I5 3470-8gb - 1tb Top27"
             price={1999}
             image="https://images-na.ssl-images-amazon.com/images/I/61mdUKyykGL._AC_SL1000_.jpg"
+            rating={5}
+          />
+          <Product
+            title="Smart TV Samsung Crystal UHD 4k 50"
+            price={2699}
+            image="https://images-na.ssl-images-amazon.com/images/I/61NkPXSNAHL._AC_SL1000_.jpg"
             rating={5}
           />
         </HomeContentRow>
