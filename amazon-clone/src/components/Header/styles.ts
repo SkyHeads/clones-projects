@@ -70,9 +70,10 @@ export const HeaderNavBasketBox = styled.div`
   color: white;
 
   span {
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 800;
+    padding-right: 5px;
     margin-right: 10px;
-    margin-left: 10px;
+    margin-left: 5px;
   }
 `;

@@ -40,7 +40,7 @@ const Header: React.FC = () => {
         <Link to="/login">
           <div onClick={handleSignOut}>
             {!user ? (
-              <span className="header__optionLineOne">Faça Login</span>
+              <span className="header__optionLineOne">Olá, Faça seu login</span>
             ) : (
               <span className="header__optionLineOne">Olá {user?.email}</span>
             )}
@@ -51,19 +51,21 @@ const Header: React.FC = () => {
         </Link>
 
         <div>
-          <span className="header__optionLineOne">Retornar</span>
-          <span className="header__optionLineTwo">& Pedidos</span>
+          <span className="header__optionLineOne">Devoluções</span>
+          <span className="header__optionLineTwo">e Pedidos</span>
         </div>
 
         <div>
-          <span className="header__optionLineOne">Seu</span>
-          <span className="header__optionLineTwo">Prime</span>
+          <span className="header__optionLineOne">Experimente</span>
+          <span className="header__optionLineTwo">
+            Prime <i className="fa fa-angle-down" />
+          </span>
         </div>
       </HeaderNav>
       <Link to="/checkout">
         <HeaderNavBasketBox>
           <BasketIcon />
-          <span>{state.basket.length}</span>
+          <span>{state.basket.length} Carrinho</span>
         </HeaderNavBasketBox>
       </Link>
     </Container>

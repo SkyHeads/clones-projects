@@ -36,14 +36,14 @@ const CheckoutProduct: React.FC<ProductProps> = ({
       <CheckoutProductInfo>
         <CheckoutProductTitle>{title}</CheckoutProductTitle>
         <CheckoutProductPrice>
-          <small>$</small>
+          <small>R$ </small>
           <strong>{price}</strong>
         </CheckoutProductPrice>
         <CheckoutProductRating>
           {Array(rating)
             .fill(rating, 0)
             .map((_: any, i: number) => (
-              <p key={i}>X</p>
+              <i className="fa fa-star" />
             ))}
         </CheckoutProductRating>
         <CheckoutProductButton type="button" onClick={removeFromBasket}>

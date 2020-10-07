@@ -32,7 +32,7 @@ const Product: React.FC<ProductProps> = ({
         <p>{title}</p>
 
         <p className="product__price">
-          <small>$</small>
+          <small>R$ </small>
           <strong>{price}</strong>
         </p>
 

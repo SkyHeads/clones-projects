@@ -29,6 +29,10 @@ export const CheckoutProductPrice = styled.p`
 export const CheckoutProductRating = styled.div`
   display: flex;
   margin-top: 5px;
+
+  i {
+    color: #cd9042;
+  }
 `;
 
 export const CheckoutProductButton = styled.button`
