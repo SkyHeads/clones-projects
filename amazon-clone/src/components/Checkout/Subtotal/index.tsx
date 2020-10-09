@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Store, getBasketTotal } from '../../../hooks/Store';
 
 import { Container } from './styles';
 
 const Subtotal: React.FC = () => {
+  const history = useHistory();
   const { state, dispatch } = useContext(Store);
 
   return (
@@ -19,7 +21,9 @@ const Subtotal: React.FC = () => {
         </small>
       </>
 
-      <button type="submit">Proceed to Checkout</button>
+      <button onClick={e => history.push('/payment')} type="button">
+        Proceed to Checkout
+      </button>
     </Container>
   );
 };
