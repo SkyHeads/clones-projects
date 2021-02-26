@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useReducer } from 'react';
 
-interface IState {
+export interface IState {
   episodes: [];
   favourites: [];
+}
+
+export interface IAction {
+  type: string;
+  payload: any;
 }
 
 const initialState: IState = {
@@ -10,12 +15,20 @@ const initialState: IState = {
   favourites: [],
 };
 
-export const Store = React.createContext<IState>(initialState);
+export const Store = React.createContext<IState | any>(initialState);
 
-// function reducer(): void {
-//   // pass
-// }
+function reducer(state: IState, action: IAction): IState {
+  switch (action.type) {
+    case 'FETCH_DATA':
+      return { ...state, episodes: action.payload };
+    default:
+      return state;
+  }
+}
 
 export const StoreProvider: React.FC = ({ children }) => {
-  return <Store.Provider value={initialState}>{children}</Store.Provider>;
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
+  );
 };
