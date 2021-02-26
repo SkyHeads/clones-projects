@@ -1,9 +1,29 @@
 import React, { useContext, useEffect, useCallback } from 'react';
-import { Store, IState } from './Store';
+import { IAction, Store } from './Store';
 
 interface ContextProps {
-  state: IState;
-  dispatch: React.Dispatch<any>;
+  state: {
+    episodes: Array<{
+      id: number;
+      name: string;
+      image: {
+        medium: string;
+      };
+      season: string;
+      number: number;
+    }>;
+  };
+  dispatch: React.Dispatch<IAction>;
+}
+
+interface IEpisode {
+  id: number;
+  name: string;
+  image: {
+    medium: string;
+  };
+  season: string;
+  number: number;
 }
 
 const App: React.FC = () => {
@@ -24,12 +44,45 @@ const App: React.FC = () => {
     });
   }, [dispatch]);
 
+  const toggleFavAction = useCallback(
+    (episode: IEpisode) => {
+      return dispatch({
+        type: 'ADD_FAV',
+        payload: episode,
+      });
+    },
+    [dispatch],
+  );
+
   console.log(state);
 
   return (
     <>
-      <h1>Rick and Morty</h1>
-      <p>Pick your favorite episode</p>
+      <header className="header">
+        <h1>Rick and Morty</h1>
+        <p>Pick your favorite episode</p>
+      </header>
+      <section className="episode-layout">
+        {state.episodes.map(episode => {
+          return (
+            <section key={episode.id} className="episode-box">
+              <img
+                src={episode.image.medium}
+                alt={`Rick and Mort ${episode.name}`}
+              />
+              <div>{episode.name}</div>
+              <section>
+                <div>
+                  Seasion: {episode.season} Number: {episode.number}
+                </div>
+                <button type="button" onClick={() => toggleFavAction(episode)}>
+                  FAV
+                </button>
+              </section>
+            </section>
+          );
+        })}
+      </section>
     </>
   );
 };

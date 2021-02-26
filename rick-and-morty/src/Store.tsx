@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 
 export interface IState {
   episodes: [];
-  favourites: [];
+  favourites: Array<any>;
 }
 
 export interface IAction {
@@ -21,6 +21,8 @@ function reducer(state: IState, action: IAction): IState {
   switch (action.type) {
     case 'FETCH_DATA':
       return { ...state, episodes: action.payload };
+    case 'ADD_FAV':
+      return { ...state, favourites: [...state.favourites, action.payload] };
     default:
       return state;
   }
